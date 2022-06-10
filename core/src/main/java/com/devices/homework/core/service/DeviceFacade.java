@@ -3,7 +3,7 @@ package com.devices.homework.core.service;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import com.devices.homework.core.data.Device;
+import com.devices.homework.core.entity.Device;
 import com.devices.homework.core.exception.DeviceNotFoundException;
 import com.devices.homework.core.service.command.DeviceConnectionResult;
 

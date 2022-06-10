@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.devices</groupId>
 		<artifactId>devices</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.2-RELEASE</version>
 	</parent>
 
 	<artifactId>application</artifactId>
@@ -17,13 +17,6 @@
 			<artifactId>core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.devices</groupId>
-			<artifactId>controller</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
 	</dependencies>
 
 </project>

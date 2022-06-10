@@ -1,5 +1,5 @@
 package com.devices.homework.core.service.command;
 
-public interface Command<R extends AbstractResult>
+public class CommandVoidResult extends AbstractResult
 {
 }

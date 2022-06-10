@@ -9,8 +9,9 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.devices.homework.core.data.ConnectionRequest;
-import com.devices.homework.core.data.Device;
+import com.devices.homework.core.entity.ConnectionRequest;
+import com.devices.homework.core.entity.Device;
+import com.devices.homework.core.entity.LanDevice;
 import com.devices.homework.core.exception.DeviceNotFoundException;
 import com.devices.homework.core.service.command.DeviceConnectionResult;
 
@@ -20,18 +21,8 @@ public class DefaultDeviceFacade implements DeviceFacade
 {
 	@Autowired
 	private DeviceService deviceService;
-	//	@Autowired
-	//	private ModelMapper modelMapper;
 	@Autowired
 	private DeviceConnectionHandler deviceConnectionHandler;
-
-	//	@Override
-	//	public <T extends Device> T createDevice(final T device, Class<T> exactDeviceType)
-	//	{
-	//		checkNotNull(device, "Device must not be null");
-	//		final DeviceEntity deviceEntity = deviceToDeviceEntityConverter.convert(device);
-	//		return deviceEntityToDeviceConverter.convert(deviceService.createDevice(deviceEntity));
-	//	}
 
 	@Override
 	public <T extends Device> T createDevice(final T device)
@@ -46,7 +37,8 @@ public class DefaultDeviceFacade implements DeviceFacade
 	{
 		checkNotNull(deviceMacAddress, "Device mac address must not be null");
 		checkNotNull(parentMacAddress, "Parent device mac address must not be null");
-		final Device device = findDevice(deviceMacAddress);
+
+		final LanDevice device = (LanDevice) findDevice(deviceMacAddress);
 		final Device parentDevice = findDevice(parentMacAddress);
 		final ConnectionRequest request = new ConnectionRequest.Builder().deviceType(device.getDeviceType()).device(device)
 				.parent(parentDevice).build();

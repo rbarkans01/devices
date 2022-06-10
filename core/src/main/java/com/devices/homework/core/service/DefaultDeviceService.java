@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.devices.homework.core.data.Device;
+import com.devices.homework.core.entity.Device;
 import com.devices.homework.core.repository.DeviceRepository;
 
 
 @Service
-public class DefaultDeviceService implements DeviceService
+public class DefaultDeviceService implements DeviceService<Device>
 {
 	@Autowired
 	private DeviceRepository deviceRepository;

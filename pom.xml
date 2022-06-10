@@ -11,7 +11,7 @@
 
 	<groupId>com.devices</groupId>
 	<artifactId>devices</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.2-RELEASE</version>
 
 	<packaging>pom</packaging>
 
@@ -41,7 +41,6 @@
     <modules>
 	    <module>application</module>
         <module>core</module>
-        <module>controller</module>
     </modules>
 
 </project>
