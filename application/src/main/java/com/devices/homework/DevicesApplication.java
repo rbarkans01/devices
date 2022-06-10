@@ -1,4 +1,4 @@
-package com.devices.homework.application;
+package com.devices.homework;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
